@@ -9,6 +9,7 @@ import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Callback
 import retrofit2.Converter
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -48,13 +49,13 @@ class Service(val context: Context) {
         return retrofit.create(Api::class.java)
     }
 
-    fun getData(){
+    fun getData(callback: Callback<com.example.sphtech.net.Response>) {
         val api = generateService(BuildConfig.BASEURL)
-        api.getData()
+        api.getData("a807b7ab-6cad-4aa6-87d0-e283a7353a0f", 5).enqueue(callback)
+
     }
 
     inner class BasicAuthInterceptor(user: String, password: String) : Interceptor {
-
         private val credentials: String = Credentials.basic(user, password)
 
         @Throws(IOException::class)
