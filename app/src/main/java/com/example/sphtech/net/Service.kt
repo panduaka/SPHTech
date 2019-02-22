@@ -1,6 +1,5 @@
 package com.example.sphtech.net
 
-import android.content.Context
 import com.example.sphtech.BuildConfig
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -16,7 +15,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import java.io.IOException
 import java.util.concurrent.TimeUnit
 
-class Service(val context: Context) {
+class Service {
     companion object {
         const val connectionTimeOut: Long = 120
         const val writeTimeOut: Long = 120
