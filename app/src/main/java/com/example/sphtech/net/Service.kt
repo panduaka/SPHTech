@@ -49,7 +49,7 @@ class Service(val context: Context) {
         return retrofit.create(Api::class.java)
     }
 
-    fun getData(callback: Callback<com.example.sphtech.net.Response>) {
+    fun getData(callback: Callback<com.example.sphtech.net.TestApiResponse>) {
         val api = generateService(BuildConfig.BASEURL)
         api.getData("a807b7ab-6cad-4aa6-87d0-e283a7353a0f", 5).enqueue(callback)
 

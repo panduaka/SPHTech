@@ -10,5 +10,5 @@ interface Api {
     fun getData(
         @Query("resource_id") resourceId: String,
         @Query("limit") limit: Int
-    ): Call<Response>
+    ): Call<TestApiResponse>
 }
